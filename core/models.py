@@ -108,6 +108,41 @@ class AgentModel(BaseModel):
         description="Agent's database"
     )
 
+    iteration_id: Any = Field(
+        default=None,
+        description="Agent's iteration_id"
+    )
+
+    demand: Any = Field(
+        default=None,
+        description="Agent's demand"
+    )
+
+    knowledge_area: Any = Field(
+        default=None,
+        description="Agent's knowledge_area"
+    )
+
+    messages: Any = Field(
+        default=None,
+        description="Agent's messages"
+    )
+
+    total_conversation_tokens: Any = Field(
+        default=None,
+        description="Agent's total_conversation_tokens"
+    )
+    
+    input_tokens: Any = Field(
+        default=None,
+        description="Agent's input_tokens"
+    )
+
+    output_tokens: Any = Field(
+        default=None,
+        description="Agent's output_tokens"
+    )
+
     @field_validator('role', 'field_of_work', 'expertise_level', 'professional_background')
     @classmethod
     def validate_not_empty(cls, v: str, field: str) -> str:

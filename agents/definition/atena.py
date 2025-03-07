@@ -367,7 +367,7 @@ class AtenaSystem(AgentProxy):
             )
             
             # Load configurations from the markdown file
-            config = ExpandevConfigProvider('docs/Agent_Construction/Expandev_Atena_Agent_Construction_Form.md')
+            config = ExpandevConfigProvider('agent_description/definition/Expandev_Atena_Agent_Construction_Form.md')
             
             # Extract LLM configurations from the first task
             task1_config = config.tasks.get("Task1", None)
