@@ -1,4 +1,4 @@
-from core.adapters.llm_adapters import LLMAdapter
+from core.proxies import LLMProxy
 from core.adapters.prompt_adapters import BasePromptStrategy
 from core.proxies import AgentProxy
 
@@ -6,7 +6,7 @@ class RequirementAgent(AgentProxy):
     def __init__(self):
         pass
 
-    def configurar(self, llm_adapter: LLMAdapter, prompt_strategy: BasePromptStrategy, knowledge_base):
+    def configurar(self, llm_adapter: LLMProxy, prompt_strategy: BasePromptStrategy, knowledge_base):
         # Carrega do MD
         self.llm = llm_adapter
         self.prompt_strategy = prompt_strategy
