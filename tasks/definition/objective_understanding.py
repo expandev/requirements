@@ -1,4 +1,4 @@
-from core.proxies import TaskProxy
+from core.proxies.task_proxy import TaskProxy
 from core.MD_reader.md_config_expandev import ExpandevConfigProvider
 from pydantic import Field
 

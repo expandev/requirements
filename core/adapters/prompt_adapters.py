@@ -1,9 +1,7 @@
 from abc import ABC, abstractmethod
-from typing import Optional
+from typing import Optional, Any
 from pydantic import BaseModel, Field, model_validator
-from core.proxies import AgentProxy
-from core.proxies import TaskProxy
-from core.proxies import LLMProxy
+from core.proxies.llm_proxy import LLMProxy
 
 """
 SystemPromptBase Module - Integration of agent profiles with task definitions.
@@ -27,15 +25,15 @@ class SystemPromptBase(BaseModel):
         llm_config: Language model configuration (optional)
     """
     
-    agent_profile: AgentProxy = Field(
+    agent_profile: Any = Field(
         description="Agent definition containing role, objectives, and background"
     )
     
-    task_definition: TaskProxy = Field(
+    task_definition: Any = Field(
         description="Task definition containing objectives and expected outputs"
     )
     
-    llm_config: Optional[LLMProxy] = Field(
+    llm_config: Optional[Any] = Field(
         default=None,
         description="Language model configuration (optional)"
     )

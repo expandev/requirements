@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Optional, List
+from typing import Optional, List, Any
 from pydantic import BaseModel, Field, field_validator
 import json
 import logging
@@ -8,9 +8,10 @@ import warnings
 from abc import ABC, abstractmethod
 from typing import Any, ClassVar, Dict, List, Literal, Optional, Union, Type
 from pydantic import BaseModel, Field, field_validator, model_validator
+from core.enums.system import SystemState
 from langchain_core.messages import AIMessage, BaseMessage
-from core.enums.models import Models, MODEL_TO_PROVIDER, LLM_CONTEXT_WINDOW_SIZES, DEFAULT_CONTEXT_WINDOW_SIZE, CONTEXT_WINDOW_USAGE_RATIO
-    
+from core.enums.models import Models, MODEL_TO_PROVIDER, LLM_CONTEXT_WINDOW_SIZES, DEFAULT_CONTEXT_WINDOW_SIZE, CONTEXT_WINDOW_USAGE_RATIO    
+from core.proxies.task_proxy import TaskProxy
 
 """
 AgentModel Module (AgentDefinition) - Defines and manages agent profiles in the Atena system.
@@ -19,9 +20,6 @@ This module provides the structure to define agents and their attributes,
 including roles, objectives, and operational contexts.
 """
 class AgentModel(BaseModel):
-    def __init__(self, agent):
-        self._agent = agent
-
     """
     Defines the profile and characteristics of an agent.
     """
@@ -34,18 +32,22 @@ class AgentModel(BaseModel):
     # Section 4: Agent Configuration
     # 4.1 Role
     role: str = Field(
+        default=None,
         description="Agent's role/title"
     )
     
     field_of_work: str = Field(
+        default=None,
         description="Agent's field of work"
     )
     
     expertise_level: str = Field(
+        default=None,
         description="Agent's expertise level"
     )
     
     professional_background: str = Field(
+        default=None,
         description="Agent's professional background"
     )
     
@@ -79,6 +81,26 @@ class AgentModel(BaseModel):
     autonomy: str = Field(
         default="",
         description="Agent's autonomy level"
+    )
+
+    state: SystemState = Field(
+        default=None,
+        description="Agent's current state"
+    )
+
+    user: str = Field(
+        default=None,
+        description="Agent's user"
+    )
+
+    agent: Any = Field(
+        default=None,
+        description="Agent's profile"
+    )
+
+    task: TaskProxy = Field(
+        default=None,
+        description="Agent's task"
     )
 
     @field_validator('role', 'field_of_work', 'expertise_level', 'professional_background')

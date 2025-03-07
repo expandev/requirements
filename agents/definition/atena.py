@@ -8,21 +8,23 @@ This module implements the main Atena system, responsible for:
 - Saving results to the database
 
 """
-
+import logging
+import os
+import json
 from typing import List, Optional, Dict, Any
 from langchain_core.messages import SystemMessage, HumanMessage, BaseMessage
 from core.adapters.prompt_adapters import SystemPromptBase
 from agents.entities.definition.atena import AtenaEntity
 from tasks.definition.objective_understanding import ObjectiveUnderstanding
-from core.proxies import AgentProxy, TaskProxy
+from core.proxies.agent_proxy import AgentProxy
+from core.proxies.task_proxy import TaskProxy
 from core.utils.database_conversation import DatabaseConversation
 from core.MD_reader.md_config_expandev import ExpandevConfigProvider
 from core.adapters.llm_adapters import create_langchain_compatible_llm
 from dotenv import load_dotenv, find_dotenv
-from enum import Enum
-import logging
-import os
-import json
+
+from core.enums.conversation import ConversationState
+from core.enums.system import SystemState
 
 # Logging configuration for event tracking and error handling
 logging.basicConfig(
@@ -30,25 +32,6 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
-
-class SystemState(Enum):
-    """
-    Possible states of the Atena system.
-    
-    States:
-        ACTIVE: System is operational and ready to process messages
-        ERROR: System encountered an error and needs to be restarted
-        ENDED: System has finished its execution normally
-    """
-    ACTIVE = "active"
-    ERROR = "error"
-    ENDED = "ended"
-
-class ConversationState(Enum):
-    """Possible conversation states."""
-    ACTIVE = "active"
-    ENDED = "ended"
-    ERROR = "error"
 
 class AtenaSystem(AgentProxy):
     """
@@ -77,11 +60,11 @@ class AtenaSystem(AgentProxy):
         iteration_id (int): ID of the current iteration
     """
 
-    def __init__(self, demand_id: int, task: ObjectiveUnderstanding):
-        super().__init__(demand_id=demand_id, task=task)
+    def inicialize(self, demand_id: int, task: TaskProxy):
+        super().inicialize(demand_id=demand_id, task=task)
         self.system = AtenaSystem(demand_id, task) 
         self.state = ConversationState.ACTIVE
-    
+
     def start_conversation(self) -> None:
         """Main function that starts the system."""
         try:
@@ -406,7 +389,7 @@ class AtenaSystem(AgentProxy):
             
             # Configure LLM with values retrieved from markdown
             # Importar diretamente do nosso módulo
-            from core.proxies import LLMProxy
+            from core.proxies.llm_proxy import LLMProxy
             llm_def = LLMProxy(
                 model=model_name,
                 temperature=temperature,

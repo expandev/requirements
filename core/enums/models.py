@@ -1,8 +1,6 @@
 from enum import Enum
 import os
 from dotenv import load_dotenv, find_dotenv
-from core.proxies import LLMProxy
-from expandev.LLM.langchain_llm_adapter import create_langchain_compatible_llm
 
 # Carregar variáveis de ambiente
 load_dotenv(find_dotenv())
@@ -140,12 +138,13 @@ def get_llm(model: str, temperature: float):
         raise ValueError(f"Modelo '{model}' não reconhecido")
     
     # Criar instância LLM
-    llm = LLMProxy(
-        model=model,
-        temperature=temperature,
-        api_key=api_key,
-        base_url=base_url
-    )
+    # llm = LLMProxy(
+    #     model=model,
+    #     temperature=temperature,
+    #     api_key=api_key,
+    #     base_url=base_url
+    # )
     
     # Envolver em um adaptador compatível com LangChain
-    return create_langchain_compatible_llm(llm)
+    #return create_langchain_compatible_llm(llm)
+    pass

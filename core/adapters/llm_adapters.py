@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 from typing import Any, ClassVar, Dict, List, Literal, Optional, Union
 from pydantic import BaseModel, Field, field_validator, model_validator
 from langchain_core.messages import AIMessage, BaseMessage
-from core.proxies import LLMProxy
+from core.proxies.llm_proxy import LLMProxy
 
 logger = logging.getLogger(__name__)
 

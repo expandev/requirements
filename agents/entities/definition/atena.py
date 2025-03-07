@@ -1,5 +1,3 @@
-from core.proxies import LLMProxy
-from core.adapters.prompt_adapters import BasePromptStrategy
 from core.models import AgentModel
 from pydantic import Field
 from typing import List, Optional, Dict, Any
