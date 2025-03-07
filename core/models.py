@@ -103,6 +103,11 @@ class AgentModel(BaseModel):
         description="Agent's task"
     )
 
+    database: Any = Field(
+        default=None,
+        description="Agent's database"
+    )
+
     @field_validator('role', 'field_of_work', 'expertise_level', 'professional_background')
     @classmethod
     def validate_not_empty(cls, v: str, field: str) -> str:
