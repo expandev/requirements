@@ -389,8 +389,14 @@ class AtenaSystem(AgentProxy):
             
             # Configure LLM with values retrieved from markdown
             # Importar diretamente do nosso módulo
-            from core.proxies.llm_proxy import LLMProxy
-            llm_def = LLMProxy(
+            # from core.proxies.llm_proxy import LLMProxy
+            # llm_def = LLMProxy(
+            #     model=model_name,
+            #     temperature=temperature,
+            #     max_tokens=max_tokens
+            # )
+            from llms.llm_openai import OpenAILLM
+            llm_def = OpenAILLM(
                 model=model_name,
                 temperature=temperature,
                 max_tokens=max_tokens

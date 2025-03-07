@@ -40,4 +40,5 @@ dependencies = [
     "python-dotenv==1.0.1",
     "watchdog>=6.0.0",
     "psycopg2>=2.9.10",
+    "openai>=1.65.4",
 ]
