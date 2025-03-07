@@ -1,0 +1,1412 @@
+MAPPING COMPREHENSIVE REQUIREMENTS PROCESS
+
+HOW TO READ THE FUNCTIONAL COMPONENTES LIBRARY:
+1. The functional components library contents are organized in a hierarchical structure.
+2. The library is divided into natures of operation, which represent the main functionalities of the system.
+3. Each nature of operation contains main categories, which group related functional components.
+4. Functional components are the smallest units of functionality and represent specific tasks or operations.
+5. Each functional component has a name, a description, and a list of example functional items.
+6. Example functional items are specific implementations or tools that perform the functionality described by the component.
+7. The functional components library can be used to identify and define the functional requirements of a system.
+8. the functional components library is an json format file.
+
+
+COMPONENT MAPPING PROCESS:
+
+    ABSOLUTE CRITICAL RULES:
+    - EVERY SINGLE FUNCTIONAL ITEM FROM Final Answer from previous agent MUST BE MAPPED
+    - DO NOT USE GENERIC OR PREVIOUS MAPPINGS
+    - IF NO DIRECT MATCH EXISTS, CREATE A "Suggested_new_functional_item"
+
+    DETAILED MAPPING INSTRUCTIONS:
+
+    1. REVIEW OF FUNCTIONAL ITEMS:
+    - Analyze each item from knowledge_sources
+    - Understand the precise functional characteristics
+
+    2. COMPREHENSIVE ANALYSIS OF Final Answer from previous agent ANSWER:
+    - Carefully review EACH component
+    - Understand precise functional characteristics
+    - Fill the "functional_components_mapped" array with the exact hierarchy of the component
+
+    3. PRECISE KNOWLEDGE HIERARCHY MATCHING:
+    - Match EACH Final Answer from previous agent functional_item, and fill the field "functional_components_mapped" with the following hierarchy:
+        - "nature_of_operation"
+        - "main_category"
+        - "functional_component"
+        - "functional_item" (could be more than one)
+    
+
+    4. RIGOROUS VALIDATION CHECKLIST:
+    - Confirm each nature-category-component exists in knowledge_sources
+    - Preserve ALL original Final Answer from previous agent properties, except "functional_components_mapped"
+    - You have to fill the "functional_components_mapped" array with de mapping of the functional item to the knowledge_sources
+
+
+FUNCTIONAL COMPONENTES LIBRARY (JSON format):
+{
+    "nature_of_operation": [
+        {
+            "name": "Storage and retrieval",
+            "description": "Report, store, modify, retrieve and manage information of the same nature",
+            "main_category": [
+                {
+                    "name": "CRUD operations",
+                    "description": "Perform creation, reading, updating, deleting and retrieval operations on structured data.",
+                    "functional_component": [
+                        {
+                            "name": "Parameter registration",
+                            "description": "Perform operations with information relating to elements that serve to determine properties of other elements of the system, such as objects and operations. They serve to classify, organize, characterize, assign values ​​or conditions, etc.",
+                            "functional_item_examples": [
+                                "Registration of states, zip codes, regions, interest tables, payment methods, delivery methods, commission percentages, etc."
+                            ]
+                        },
+                        {
+                            "name": "Object registration",
+                            "description": "Perform operations with information relating to basic system objects, most of which are necessary and referenced by operations supported by the systems.",
+                            "functional_item_examples": [
+                                "Registration of Customers, Suppliers, Carriers, Employees, Salespeople, Products, etc."
+                            ]
+                        },
+                        {
+                            "name": "Operations registration",
+                            "description": "Perform operations with information related to business operations supported by systems and that use parameter and object records to represent activities of human economic interactions normally controlled by information systems.",
+                            "functional_item_examples": [
+                                "Registration of Invoices, Sales, Purchases, Accounts Payable, Accounts Receivable, Inventory, Deliveries, etc."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Processing",
+                    "description": "Set of operations that transform, clean, organize and manipulate data so that it is ready for use in different contexts, whether analytical, operational or decision-making.",
+                    "functional_component": [
+                        {
+                            "name": "Data validation",
+                            "description": "Process of verifying the accuracy, completeness, coherence and adequacy of data before it is stored or processed. This process ensures that the data meets the requirements for format, type, range of values ​​and other criteria established by the application or system.",
+                            "functional_item_examples": [
+                                "Validation of data types, such as exclusively numeric entries, alphanumeric characters and dates, validation of form data, validation of data formats, such as telephone, CPF, CNPJ, CEP."
+                            ]
+                        },
+                        {
+                            "name": "Categorization and Grouping",
+                            "description": "It refers to the organization of data into predefined classes, while grouping (or clustering) uses algorithms to gather data with similar characteristics into groups, without necessarily having predefined categories.",
+                            "functional_item_examples": [
+                                "Grouping financial transactions by value range",
+                                "Customer grouping by purchasing behavior",
+                                "Classification of products by categories in an E-commerce"
+                            ]
+                        },
+                        {
+                            "name": "Data purge",
+                            "description": "It consists of eliminating data that has become obsolete, irrelevant or that is no longer necessary for operational or analytical processes or for compliance with legal standards.",
+                            "functional_item_examples": [
+                                "Purging expired access log data",
+                                "Removing old backups",
+                                "Deletion of personal data upon request from data subjects"
+                            ]
+                        },
+                        {
+                            "name": "Data Transformation",
+                            "description": "Processes that alter the structure, format, or representation of data to suit the context of analysis or operation. May include converting data types, aggregating values, or changing granularity.",
+                            "functional_item_examples": [
+                                "Currency Value Conversion",
+                                "Aggregation of daily data to monthly",
+                                "Changing text to upper or lower case for standardization"
+                            ]
+                        },
+                        {
+                            "name": "Data Integration",
+                            "description": "Combination of data from different sources or systems, moving or creating new information in structures other than the original.",
+                            "functional_item_examples": [
+                                "Integration of information from different departments (sales, finance and marketing) into a central system",
+                                "Merging databases with different schemas to generate a single view of the data",
+                                "Moving data between different information systems"
+                            ]
+                        },
+                        {
+                            "name": "Data Enrichment",
+                            "description": "Adds additional data to an existing database, increasing its informational value. This enrichment can be carried out from external or internal sources.",
+                            "functional_item_examples": [
+                                "Adding demographic data to a customer list",
+                                "Integrating climate data with sales records for seasonality analysis",
+                                "Using social media data to complement consumer profiles"
+                            ]
+                        },
+                        {
+                            "name": "Data Anonymization and Masking",
+                            "description": "Application of techniques that protect sensitive information, ensuring privacy and compliance with regulatory standards.",
+                            "functional_item_examples": [
+                                "Replacing real names with pseudonyms in research databases",
+                                "Masking credit card numbers in transaction logs",
+                                "Hiding personal information for access in development tests"
+                            ]
+                        },
+                        {
+                            "name": "Data Versioning",
+                            "description": "Tracking and controlling the different versions of a data or data set over time. This process allows changes to the data to be recorded, identifying the current version and maintaining the history of modifications.",
+                            "functional_item_examples": [
+                                "Document versioning in content management systems",
+                                "Data versions in a product registration system",
+                                "Edit history in user profiles"
+                            ]
+                        },
+                        {
+                            "name": "Data Compression/Decompression",
+                            "description": "Processes that reduce the size of data, preserving the information and structure of the data, allowing it to be restored.",
+                            "functional_item_examples": [
+                                "Compress data into compact formats such as ZIP or GZIP to save disk space and transfer data faster",
+                                "Compress images, videos and audios to reduce storage space",
+                                "Data compression during transfer process"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Autogenous Information",
+                    "description": "Refers to data generated automatically by the information system itself, without the need for external input. This data originates from internal operations, calculations, automatic processes or activity monitoring.",
+                    "functional_component": [
+                        {
+                            "name": "Internal calculations",
+                            "description": "Automated operations performed by the system to generate data derived from information already stored or in real time, without manual intervention. These calculations may include the performance of statistics, aggregations, sums, averages, counts or other types of data processing that serve to monitor the state of the system, optimize operations or enrich the information base available for analysis.",
+                            "functional_item_examples": [
+                                "Calculation of average system accesses",
+                                "Consolidation of process performance indicators",
+                                "Generating risk scores in financial systems"
+                            ]
+                        },
+                        {
+                            "name": "Security and control",
+                            "description": "Automatic generation of information aimed at monitoring and protecting the integrity, confidentiality and availability of data in a system. This autogenous information is produced from activities such as automatic audits, access logs, login attempts, detection of suspicious activities, among other security processes.",
+                            "functional_item_examples": [
+                                "Recording user access and activity logs",
+                                "Monitoring suspicious login attempts",
+                                "Detection and recording of critical configuration changes",
+                                "Storage of error logs and operational anomalies"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Unstructured Data",
+                    "description": "Information that does not have a fixed schema or tabular organization and, therefore, does not follow a predefined format like structured data in relational databases. This data can include text files, images, videos, audios, text documents (e.g. PDFs, Word files), emails, social media posts, among others.",
+                    "functional_component": [
+                        {
+                            "name": "Store unstructured files",
+                            "description": "Choosing the best means and process for storing unstructured data, taking into account the characteristics of the data and the purpose of use.",
+                            "functional_item_examples": [
+                                "Storage of images, audio, videos, documents, emails, social media posts, etc."
+                            ]
+                        },
+                        {
+                            "name": "Convert file formats",
+                            "description": "Converting data between different unstructured file formats, making the data accessible and compatible with the systems and applications that consume, store or process these files.",
+                            "functional_item_examples": [
+                                "Convert image file from JPEG to PNG to maintain image quality",
+                                "Transforming a text (TXT) data file into JSON or XML format",
+                                "Convert audio file from WAV to MP3, reducing file size"
+                            ]
+                        },
+                        {
+                            "name": "Recover unstructured files",
+                            "description": "Ability to locate, access and obtain unstructured files that are stored in an information system, which may or may not use metadata associated with the files (such as name, creation date, size, tags, etc.) or implement keyword search mechanisms, content recognition and advanced filtering.",
+                            "functional_item_examples": [
+                                "Search for documents by keyword",
+                                "Image recovery by tag",
+                                "Localization of videos by metadata",
+                                "Audio recovery by automatic transcription"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Sharing",
+                    "description": "Refers to the sending and receiving of data between users, systems or devices, focusing on the direct transfer of information and files without including integrations or automatic notifications. The transfer can be carried out through emails, file transfer protocols, cloud sharing, or other methods that ensure the security and accuracy of the shared data.",
+                    "functional_component": [
+                        {
+                            "name": "Sending and Receiving Information",
+                            "description": "> #### Examples",
+                            "functional_item_examples": [
+                                "Sending financial reports by email",
+                                "File transfer via FTP",
+                                "Cloud sharing of project documents",
+                                "Receiving images for analysis"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Caching",
+                    "description": "Temporarily storing data in computer memory or other devices, with the aim of accelerating response time and/or reducing computational costs.",
+                    "functional_component": [
+                        {
+                            "name": "Data Cache",
+                            "description": "Temporary storage on a rapidly accessible medium of structured data available at a connection point between the user and the information provider.",
+                            "functional_item_examples": [
+                                "Cache data from a response to a query or calculation repeated many times",
+                                "Cache the result of an SQL query",
+                                "Security Credential Cache"
+                            ]
+                        },
+                        {
+                            "name": "File Cache",
+                            "description": "Temporary storage on a fast-access medium of files needed for an operation without having to load the file again each time it is requested.",
+                            "functional_item_examples": [
+                                "Image caching in a web browser",
+                                "Cache PDF files of a pre-processed contract"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Process Automation",
+            "description": "Execution of tasks and processes in an automated manner, eliminating human intervention.",
+            "main_category": [
+                {
+                    "name": "Updating Structured Information (Creation and updating of systemic data)",
+                    "description": "Automates processes involving the creation, deletion or updating of structured data within the system.",
+                    "functional_component": [
+                        {
+                            "name": "Script Execution",
+                            "description": "Automates the execution of scripts that insert, delete data or perform modifications or updates to data, such as adjustments to records, migrations or mass data corrections, which can start from a file or another database.",
+                            "functional_item_examples": [
+                                "Running scripts to update product prices from a spreadsheet",
+                                "Removing duplicate records",
+                                "Applying bulk corrections to customer data",
+                                "Migrating data from a legacy system to a new platform",
+                                "Downloading installments from a file with payments",
+                                "Data purge",
+                                "Clearing temporary data"
+                            ]
+                        },
+                        {
+                            "name": "Task Scheduling",
+                            "description": "Schedules the execution of automated tasks.",
+                            "functional_item_examples": [
+                                "Scheduling the sending of billing emails to customers at the end of the month",
+                                "Daily backup at specific time",
+                                "Generate monthly reports on a specific day",
+                                "Quotes updated every hour"
+                            ]
+                        },
+                        {
+                            "name": "Document Generation",
+                            "description": "Automatic creation of documents based on templates and system data, such as reports, invoices or certificates.",
+                            "functional_item_examples": [
+                                "Generation of contracts in DOCX or PDF from a template filled with system data",
+                                "Automatic issuance of invoices",
+                                "Creating monthly performance reports based on financial data"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Updating Unstructured Information (Files, PDF, Images)",
+                    "description": "Processing and manipulating data in unstructured formats such as text files, PDFs and images.",
+                    "functional_component": [
+                        {
+                            "name": "Image Processing",
+                            "description": "Transformation and analysis of digital images to extract information or make modifications.",
+                            "functional_item_examples": [
+                                "Text extraction from images",
+                                "Identifying features in product images",
+                                "Analysis of scanned documents",
+                                "Image resizing and compression",
+                                "Applying filters and effects",
+                                "Converting images to different formats"
+                            ]
+                        },
+                        {
+                            "name": "Form Processing",
+                            "description": "Extracting information from scanned forms or images, converting them into structured data.",
+                            "functional_item_examples": [
+                                "Scanning paper forms and extracting the data into a database",
+                                "Recognizing PDF form fields and converting them into editable data",
+                                "Recognition of manually filled fields",
+                                "Automation of reading tax documents"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Information integration",
+                    "description": "Connection between different systems or applications to allow the exchange and synchronization of data in an automated manner.",
+                    "functional_component": [
+                        {
+                            "name": "API Integration",
+                            "description": "Communication between systems through application programming interfaces (APIs), to exchange data in a standardized way.",
+                            "functional_item_examples": [
+                                "Integration between payment systems and e-commerce platforms to update order status",
+                                "Synchronizing information between a CRM and a customer support system",
+                                "Integration of an inventory management system with a logistics system",
+                                "Data sharing between ERP systems and banks"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Test Automation",
+                    "description": "Automated software quality verification.",
+                    "functional_component": [
+                        {
+                            "name": "Run unit tests automatically",
+                            "description": "Running unit tests to verify the functioning of small parts of the code individually, in an automated way.",
+                            "functional_item_examples": [
+                                "Mathematical Function Tests",
+                                "Verifying data validators",
+                                "Business rules testing",
+                                "Testing of data processing modules"
+                            ]
+                        },
+                        {
+                            "name": "Perform integration testing",
+                            "description": "Running tests to verify how different parts of the system interact with each other.",
+                            "functional_item_examples": [
+                                "Communication tests between modules of a system",
+                                "Testing communication between APIs of different services",
+                                "Verification of complete flows"
+                            ]
+                        },
+                        {
+                            "name": "Generate test results reports",
+                            "description": "Automating the creation of reports that document the results of tests performed, including information about tests that passed and failed.",
+                            "functional_item_examples": [
+                                "Generating graphs with test success rates",
+                                "Code Coverage Reports",
+                                "Documentation of faults found",
+                                "Test execution history",
+                                "Performance validation reports",
+                                "Reporting load test results on an e-commerce system"
+                            ]
+                        },
+                        {
+                            "name": "Compare results with expected ones",
+                            "description": "Comparison between the results obtained in the tests and the expected values ​​to identify discrepancies.",
+                            "functional_item_examples": [
+                                "Comparing mathematical function outputs with expected values",
+                                "Comparison of numerical outputs",
+                                "Data formatting check",
+                                "Validation of expected behaviors",
+                                "Verifying API responses in load tests"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "RPA (Robotic Process Automation)",
+                    "description": "Use of software robots to perform automated tasks in systems and applications.",
+                    "functional_component": [
+                        {
+                            "name": "Automate repetitive tasks",
+                            "description": "Automated execution of standardized processes.",
+                            "functional_item_examples": [
+                                "Invoice processing",
+                                "Auto-fill spreadsheets",
+                                "Automation of new customer registration in a system",
+                                "Data transfer between systems",
+                                "Automatic report generation",
+                                "Sending automatic emails with customer data"
+                            ]
+                        },
+                        {
+                            "name": "Integrate with different systems",
+                            "description": "Integration between different systems and applications, allowing robots to access and manipulate data on different platforms.",
+                            "functional_item_examples": [
+                                "Integration with legacy systems",
+                                "Connecting to web applications",
+                                "CRM system integration with an ERP system",
+                                "Integration of email system with a task management system",
+                                "Connection between HR systems and payment platforms for transfers",
+                                "Automation of updates between project management systems and CRM",
+                                "Synchronizing databases with analytics platforms"
+                            ]
+                        },
+                        {
+                            "name": "Extract data from documents",
+                            "description": "Extract data from documents such as PDFs, images, and spreadsheets and convert them into structured data.",
+                            "functional_item_examples": [
+                                "Extracting data from invoices",
+                                "Extracting information from legal contracts",
+                                "Extracting data from reports",
+                                "Reading PDF documents",
+                                "Capture of data from identity documents for registration systems."
+                            ]
+                        },
+                        {
+                            "name": "Automatically fill forms",
+                            "description": "Filling out online or PDF forms with data extracted from other sources.",
+                            "functional_item_examples": [
+                                "Automatic filling of records in CRM systems",
+                                "Completing request forms, such as purchasing forms with product data",
+                                "Filling out online forms with data from a spreadsheet",
+                                "Submitting information to government records forms",
+                                "Inserting order data into purchasing systems"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Continuous Integration and Continuous Delivery (CI/CD)",
+                    "description": "Automation of software development, testing and delivery processes.",
+                    "functional_component": [
+                        {
+                            "name": "Automate the build process",
+                            "description": "Automation of the source code compilation process and generation of executable artifacts.",
+                            "functional_item_examples": [
+                                "Building applications for testing in development environments",
+                                "Compiling code for execution on production servers",
+                                "Preparation of software distribution packages"
+                            ]
+                        },
+                        {
+                            "name": "Perform automated testing",
+                            "description": "Executing automated tests at different stages of the CI/CD process to verify software quality.",
+                            "functional_item_examples": [
+                                "Running unit tests",
+                                "Automated Integration Testing",
+                                "User Interface Testing",
+                                "Performance tests",
+                                "Version compatibility testing."
+                            ]
+                        },
+                        {
+                            "name": "Deploy applications automatically",
+                            "description": "Automated distribution of new software versions across different environments, such as development, testing or production.",
+                            "functional_item_examples": [
+                                "Deploying an application to a web server",
+                                "Deploying a Service to a Kubernetes Cluster",
+                                "Updating a database",
+                                "Deploying updates to cloud applications",
+                                "Implementation of new features in staging environments",
+                                "Automatic distribution of new features to users of a platform",
+                                "Container update",
+                                "Automatic rollback in case of failure"
+                            ]
+                        },
+                        {
+                            "name": "Monitor the CI/CD pipeline",
+                            "description": "Monitoring and analysis of the stages of the continuous integration and delivery pipeline.",
+                            "functional_item_examples": [
+                                "Monitoring execution logs in pipelines",
+                                "Pipeline performance metrics",
+                                "Real-time build tracking",
+                                "Failure alerts in deployment steps"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Batch Processing",
+                    "description": "Automation of operations that process large volumes of data in a single, often scheduled, execution.",
+                    "functional_component": [
+                        {
+                            "name": "Process large volumes of data",
+                            "description": "Operations that involve the processing of large amounts of information in an automated manner.",
+                            "functional_item_examples": [
+                                "Overnight transaction processing",
+                                "Payroll calculation",
+                                "Monthly report generation",
+                                "Log file processing",
+                                "Financial transaction processing",
+                                "Sensor data processing"
+                            ]
+                        },
+                        {
+                            "name": "Schedule tasks to run at specific times",
+                            "description": "Scheduling tasks to be executed at specific times, allowing processing to be carried out at times of lower demand.",
+                            "functional_item_examples": [
+                                "Scheduled backups",
+                                "Periodic data import",
+                                "Automatic report generation"
+                            ]
+                        },
+                        {
+                            "name": "Manage processing queues",
+                            "description": "Control the order and prioritization of tasks in a process queue for efficient execution.",
+                            "functional_item_examples": [
+                                "Batch API call processing",
+                                "Execution control in database systems",
+                                "Print queue",
+                                "Order processing",
+                                "Email sending queue"
+                            ]
+                        },
+                        {
+                            "name": "Parallelize processing to increase speed",
+                            "description": "Dividing tasks into smaller parts to be executed simultaneously on different processors or servers.",
+                            "functional_item_examples": [
+                                "Parallel processing of large volumes of financial data",
+                                "Real-time sensor information processing",
+                                "Splitting a large file into smaller parts for parallel processing",
+                                "Data processing in different threads",
+                                "Distribution of processing among different nodes of a cluster",
+                                "Parallel calculations",
+                                "Simultaneous image rendering"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Collaboration",
+            "description": "It facilitates teamwork, promoting communication and effective interaction between people.",
+            "main_category": [
+                {
+                    "name": "Asynchronous information exchange between people",
+                    "description": "Processes and tools that enable communication between individuals in a non-simultaneous manner, without the need for them to be online at the same time.",
+                    "functional_component": [
+                        {
+                            "name": "File Sharing",
+                            "description": "Allows sending, storing and accessing files between collaborators.",
+                            "functional_item_examples": [
+                                "Remote access to corporate files",
+                                "Sharing documents in an online repository",
+                                "File sharing in a content management system",
+                                "Sending files by email",
+                                "Image library"
+                            ]
+                        },
+                        {
+                            "name": "Discussion Forums",
+                            "description": "Online spaces to share ideas, ask questions and discuss topics organized into categories.",
+                            "functional_item_examples": [
+                                "Support Topics",
+                                "Technical discussions",
+                                "Knowledge sharing",
+                                "Q&A spaces to resolve doubts",
+                                "Debates organized in digital communities"
+                            ]
+                        },
+                        {
+                            "name": "Instant Messaging",
+                            "description": "Fast, real-time communication between users, involving the exchange of texts, images, videos and other types of media through messaging applications.",
+                            "functional_item_examples": [
+                                "Corporate chat",
+                                "Team Notifications",
+                                "Internal communications",
+                                "Sending SMS",
+                                "Sending voice messages",
+                                "Sending files via instant message"
+                            ]
+                        },
+                        {
+                            "name": "Shared Task Management",
+                            "description": "Tools for creating, assigning, tracking and completing collaborative tasks.",
+                            "functional_item_examples": [
+                                "Virtual Kanban Board",
+                                "Team To-Do List",
+                                "Assigning tasks to people",
+                                "Project monitoring",
+                                "Monitoring progress on shared to-do lists."
+                            ]
+                        },
+                        {
+                            "name": "Collaborative Workflows",
+                            "description": "Defining and managing workflows that involve multiple people, establishing the steps of a process and the responsibilities of each member.",
+                            "functional_item_examples": [
+                                "Document approval in collaborative systems",
+                                "Configuring approval pipelines in workflow tools",
+                                "Code review and publishing process"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Synchronous exchange of information between people",
+                    "description": "Communication between people in real time.",
+                    "functional_component": [
+                        {
+                            "name": "Videoconference",
+                            "description": "Real-time communication via video and audio.",
+                            "functional_item_examples": [
+                                "Webinars for large audiences",
+                                "Virtual meetings",
+                                "Online presentations",
+                                "Remote training"
+                            ]
+                        },
+                        {
+                            "name": "Shared Edition",
+                            "description": "Allows multiple people to edit a document simultaneously, where changes made by any one person are instantly reflected to all other participants.",
+                            "functional_item_examples": [
+                                "Collaborative document editing in an online word processing tool",
+                                "Simultaneous review of presentations in Microsoft PowerPoint",
+                                "Joint creation and editing of spreadsheets in online tools",
+                                "Real-time document and spreadsheet editing",
+                                "Using virtual whiteboards for interactive collaboration"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Notifications",
+            "description": "Sending notifications to users, informing them of important events and keeping them updated on the status of the system.",
+            "main_category": [
+                {
+                    "name": "Sending Asynchronous Messages",
+                    "description": "Sending messages to users without the need for a response or confirmation.",
+                    "functional_component": [
+                        {
+                            "name": "Reminders",
+                            "description": "Sending scheduled alerts to remind users of important events such as deadlines, tasks, and appointments.",
+                            "functional_item_examples": [
+                                "Important date reminder",
+                                "Reminder of scheduled meetings",
+                                "Bill due date notifications",
+                                "Alerts for pending tasks, such as project and payment deadlines"
+                            ]
+                        },
+                        {
+                            "name": "Critical Alerts",
+                            "description": "Sending critical alerts about urgent events or critical issues.",
+                            "functional_item_examples": [
+                                "System failure alert",
+                                "Alert about a server failure",
+                                "Security Breach Alerts",
+                                "Alerts about unauthorized access attempts",
+                                "Climate Emergency Warning"
+                            ]
+                        },
+                        {
+                            "name": "Pop-up Messages",
+                            "description": "Notifications that appear directly in the user interface of a website or application while the user is interacting with the system. These notifications typically interrupt the user experience and require an action, such as acknowledging, closing, or dismissing.",
+                            "functional_item_examples": [
+                                "Message informing about receipt of new content",
+                                "Message asking you to confirm an action, such as deleting an object.",
+                                "Notifications of available updates and whether you want to update at that time",
+                                "Error messages in forms, such as mandatory field not filled in.",
+                                "Notifications of new features in apps"
+                            ]
+                        },
+                        {
+                            "name": "Push Notifications",
+                            "description": "Messages sent from a server to a user's mobile device or desktop, even when the app or website is not open. They appear visible even in the background or when the device is locked.",
+                            "functional_item_examples": [
+                                "Notification about a new message received in chat applications",
+                                "Notification about a system update",
+                                "Alerts about promotions, sales or order status in a shopping app.",
+                                "Notifications of new interactions such as likes, comments or direct messages on social media apps.",
+                                "News and Sports Notifications",
+                                "Bank alerts about transactions made or security related to the bank account."
+                            ]
+                        },
+                        {
+                            "name": "Calendar Integration",
+                            "description": "Sending notifications based on events or times registered in calendars.",
+                            "functional_item_examples": [
+                                "Notification of future commitments",
+                                "Scheduled Events Reminder",
+                                "Notice of overlapping commitments"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Synchronous notification rendering",
+                    "description": "Notification displayed immediately during the execution flow of a process, blocking progress until the user interacts with the notification.",
+                    "functional_component": [
+                        {
+                            "name": "Display notification on Screen",
+                            "description": "Displays notifications on the user's screen, using different formats such as text messages, icons and animations.",
+                            "functional_item_examples": [
+                                "System pop-ups",
+                                "On-screen notification informing about a new message",
+                                "On-screen notification with a security alert",
+                                "Completed Task Notifications",
+                                "Displaying error messages"
+                            ]
+                        },
+                        {
+                            "name": "Play Alert Sound",
+                            "description": "Sound effects associated with important notifications.",
+                            "functional_item_examples": [
+                                "Alert sound for a new message",
+                                "Alert sound for a critical alert",
+                                "Reminder sounds on mobile devices",
+                                "Sound signaling in production systems"
+                            ]
+                        },
+                        {
+                            "name": "Vibrate the Device",
+                            "description": "Vibrates the user's mobile device to draw attention to an important notification.",
+                            "functional_item_examples": [
+                                "Vibrate device for new message",
+                                "Vibrate device for critical alert",
+                                "Vibrate device for urgent message notifications",
+                                "Vibrate your device for reminders of important events"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Control",
+            "description": "Processes to monitor, record, and verify events and actions in the system, ensuring that it functions as expected and meets security and compliance requirements.",
+            "main_category": [
+                {
+                    "name": "Verification Record",
+                    "description": "Recording information about system operation, allowing problems to be identified and ensuring compliance with standards and regulations.",
+                    "functional_component": [
+                        {
+                            "name": "Audit",
+                            "description": "Detailed record of user actions performed in the system for analysis purposes, allowing auditing of access to sensitive information and identification of possible security breaches.",
+                            "functional_item_examples": [
+                                "Recording changes to data and documents",
+                                "Audits of permission changes",
+                                "Access history",
+                                "Logging of login attempts",
+                                "Tracking access to sensitive data"
+                            ]
+                        },
+                        {
+                            "name": "Error Logging",
+                            "description": "Automatic recording of errors that occur in the system, allowing you to identify the cause of the problems and correct them.",
+                            "functional_item_examples": [
+                                "Exception log",
+                                "Code error log",
+                                "Database connection error log",
+                                "Logging of communication errors with other systems",
+                                "Application crash log",
+                                "Issue Tracking"
+                            ]
+                        },
+                        {
+                            "name": "Performance Monitoring",
+                            "description": "Monitoring metrics to assess system efficiency, identifying bottlenecks and optimizing the use of computing resources.",
+                            "functional_item_examples": [
+                                "System response time metrics",
+                                "Resource usage metrics such as CPU and memory",
+                                "Network Traffic Metrics",
+                                "Bottleneck analysis"
+                            ]
+                        },
+                        {
+                            "name": "Compliance Monitoring",
+                            "description": "Monitors system compliance with applicable standards and regulations, ensuring that data is handled securely and ethically.",
+                            "functional_item_examples": [
+                                "Monitoring compliance with security policies",
+                                "Monitoring compliance with LGPD",
+                                "Monitoring compliance with ISO standards",
+                                "Monitoring compliance with the company's internal policies"
+                            ]
+                        },
+                        {
+                            "name": "Quality Monitoring",
+                            "description": "Monitoring metrics that assess the quality of a system",
+                            "functional_item_examples": [
+                                "Pattern verification",
+                                "Error rate monitoring",
+                                "Monitoring support calls",
+                                "User satisfaction monitoring",
+                                "Downtime and availability monitoring"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Share Registration",
+                    "description": "Recording of actions performed by users in the system, allowing control of access to information and resources.",
+                    "functional_component": [
+                        {
+                            "name": "Permission Management",
+                            "description": "Defining access permissions for different users and user groups, controlling who can access which information and resources.",
+                            "functional_item_examples": [
+                                "Access control",
+                                "Setting authorization levels",
+                                "User profile control",
+                                "Allow only authorized users to access sensitive data",
+                                "Allow only certain users (profile or type) to approve requests",
+                                "Control access to system features",
+                                "Setting read and write permissions on file systems"
+                            ]
+                        },
+                        {
+                            "name": "Defining Business Rules",
+                            "description": "Definition of business rules that control system behavior and establishment of parameters for executing actions based on specific rules.",
+                            "functional_item_examples": [
+                                "Defining rules for data validation",
+                                "Defining rules for approving transactions",
+                                "Setting credit restrictions in financial systems",
+                                "Defining approval criteria in workflows"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Security Management",
+            "description": "System for data protection and access control.",
+            "main_category": [
+                {
+                    "name": "Information Security",
+                    "description": "Implements security measures to protect data and systems.",
+                    "functional_component": [
+                        {
+                            "name": "User Authentication",
+                            "description": "Verifying the identity of users attempting to access the system, ensuring that only authorized users have access to resources.",
+                            "functional_item_examples": [
+                                "Login with biometrics",
+                                "Login by password",
+                                "Multi-factor authentication",
+                                "Using access tokens"
+                            ]
+                        },
+                        {
+                            "name": "Encryption",
+                            "description": "Application of methods to protect the confidentiality of data, making it unreadable to unauthorized persons",
+                            "functional_item_examples": [
+                                "Encryption of sensitive data",
+                                "Data encryption at rest",
+                                "Data encryption in transit",
+                                "Use of symmetric and asymmetric encryption algorithms"
+                            ]
+                        },
+                        {
+                            "name": "Role-Based Access Control",
+                            "description": "Control access to system resources based on user roles, ensuring that each user has access only to the information and functionality necessary to perform their tasks.",
+                            "functional_item_examples": [
+                                "Defining administrator, manager, and user roles and assigning access permissions to each role",
+                                "Restricting access to sensitive data to users with the administrator role only",
+                                "Restricted access to managers in reporting systems",
+                                "Blocking administrative functions for standard users"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Access control",
+                    "description": "Control logical access to system resources, ensuring that only authorized people have access to information.",
+                    "functional_component": [
+                        {
+                            "name": "Identity Management",
+                            "description": "Managing user identities, controlling access to system resources and ensuring that access permissions are up to date.",
+                            "functional_item_examples": [
+                                "Creating and managing user accounts",
+                                "Assigning roles and access permissions",
+                                "Integration with directory systems"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Represent Data Visually",
+            "description": "System for displaying and analyzing information visually.",
+            "main_category": [
+                {
+                    "name": "Displaying Data Views",
+                    "description": "Presentation of information through graphics and interactive elements.",
+                    "functional_component": [
+                        {
+                            "name": "Generate interactive graphs",
+                            "description": "Creating dynamic and customizable visualizations for data analysis.",
+                            "functional_item_examples": [
+                                "Dynamic Dashboards",
+                                "Interactive visualizations",
+                                "Custom graphical reports",
+                                "Interactive bar charts for financial analysis",
+                                "Heatmaps for performance monitoring",
+                                "Real-time graphs for system monitoring"
+                            ]
+                        },
+                        {
+                            "name": "Filter data",
+                            "description": "Adjustments to views to display specific information.",
+                            "functional_item_examples": [
+                                "Period filters in sales reports",
+                                "Selecting regions on interactive maps",
+                                "Adjusting categories in dynamic charts",
+                                "Custom filters",
+                                "Segment analysis"
+                            ]
+                        },
+                        {
+                            "name": "Export reports to PDF",
+                            "description": "Generation of consolidated, standardized reports in PDF format",
+                            "functional_item_examples": [
+                                "Periodic financial reports (monthly, quarterly, annual)",
+                                "Data analysis and research results",
+                                "Invoices and proof of commercial transactions",
+                                "Project performance documentation",
+                                "Executive summaries of market analysis",
+                                "Audit and regulatory compliance reporting",
+                                "System or application performance reports",
+                                "Team and department progress reports"
+                            ]
+                        },
+                        {
+                            "name": "Customize dashboards",
+                            "description": "Configuring dashboards to display relevant metrics and information.",
+                            "functional_item_examples": [
+                                "Custom dashboards for sales managers",
+                                "Industrial KPI monitoring dashboards",
+                                "Visualizations adjusted for end users"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Peripheral Control",
+            "description": "Control and integration of different devices external to the system.",
+            "main_category": [
+                {
+                    "name": "Input Peripherals (Barcode Reader, QR Code)",
+                    "description": "Integration of data capture devices, such as barcode and QR Code readers, into the system.",
+                    "functional_component": [
+                        {
+                            "name": "Read barcodes and QR Codes",
+                            "description": "Capturing information encoded in visual codes.",
+                            "functional_item_examples": [
+                                "Reading barcodes of products in a supermarket",
+                                "Reading QR Codes on event tickets",
+                                "Reading barcodes on documents",
+                                "Scanning QR Codes for authentication and access control",
+                                "Digitization of logistics labels"
+                            ]
+                        },
+                        {
+                            "name": "Decode information from codes",
+                            "description": "Decoding of information contained in barcodes and QR Codes, converting them into data readable by the system.",
+                            "functional_item_examples": [
+                                "Decoding a product barcode to obtain product information",
+                                "Decoding a ticket's QR Code to obtain event information",
+                                "Decoding information on shipping labels",
+                                "Converting QR Codes to URLs",
+                                "Interpretation of industrial barcodes"
+                            ]
+                        },
+                        {
+                            "name": "Transmit data to the system",
+                            "description": "Transmission of decoded data to the system for processing and storage.",
+                            "functional_item_examples": [
+                                "Transmission of a ticket code to the access control system",
+                                "Transmission of product data to inventory systems",
+                                "Sending code information to ERPs",
+                                "Integration of readers with checkout systems"
+                            ]
+                        },
+                        {
+                            "name": "Configure the reader (code type, speed, etc.)",
+                            "description": "Configuration of the barcode or QR Code reader, adjusting parameters such as supported code type, reading speed and output format.",
+                            "functional_item_examples": [
+                                "Configuring the scanner to read EAN-13 barcodes",
+                                "Configuring the reader to read QR Codes with URLs",
+                                "Configuring the reader to transmit data in JSON format",
+                                "Setting supported code types",
+                                "Reading speed adjustment",
+                                "Calibration for different label formats"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Output Peripherals (Label Printer, LED Panel)",
+                    "description": "Allows you to integrate output peripherals, such as label printers and LED panels, into the system.",
+                    "functional_component": [
+                        {
+                            "name": "Print labels with custom information",
+                            "description": "Printing labels with personalized information using the label printer.",
+                            "functional_item_examples": [
+                                "Printing labels with product name, price and barcode",
+                                "Printing labels with shipping information",
+                                "Printing labels with QR codes for tracking",
+                                "Document identification"
+                            ]
+                        },
+                        {
+                            "name": "Control the LED panel to display messages and alerts",
+                            "description": "LED panel control to display messages and alerts.",
+                            "functional_item_examples": [
+                                "Displaying welcome messages",
+                                "Displaying security alerts",
+                                "Displaying the password number in a service system",
+                                "Information displays",
+                                "Status indicators"
+                            ]
+                        },
+                        {
+                            "name": "Configure the printer (label size, paper type, etc.)",
+                            "description": "Printer configuration, adjusting parameters such as paper size, label size, paper type and print resolution.",
+                            "functional_item_examples": [
+                                "Printer setup to print 5x10cm labels",
+                                "Setting up the printer to use thermal paper",
+                                "Setting up your printer to print in high resolution"
+                            ]
+                        },
+                        {
+                            "name": "Monitor printer and panel status",
+                            "description": "Monitors the status of the printer and LED panel, checking whether they are working properly and whether there are any problems.",
+                            "functional_item_examples": [
+                                "Checking if the printer has paper",
+                                "Checking if the printer is connected",
+                                "Checking if the LED panel is turned on"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Integration with IoT Devices",
+                    "description": "Allows you to integrate IoT (Internet of Things) devices, such as sensors, actuators and gateways, into the system.",
+                    "functional_component": [
+                        {
+                            "name": "Connect and control IoT devices (sensors, actuators, etc.)",
+                            "description": "Connects and controls IoT devices, allowing the system to interact with the physical world.",
+                            "functional_item_examples": [
+                                "Connecting a temperature sensor to an environmental monitoring system",
+                                "Connecting an actuator to a home automation system",
+                                "Connecting a Gateway to a Device Management System"
+                            ]
+                        },
+                        {
+                            "name": "Collect data from IoT sensors",
+                            "description": "Collects data from IoT sensors such as temperature, humidity, pressure, light, and location.",
+                            "functional_item_examples": [
+                                "Collecting temperature data from a sensor in a greenhouse",
+                                "Collecting moisture data from a sensor in a soil",
+                                "Collecting location data from a GPS device"
+                            ]
+                        },
+                        {
+                            "name": "Send commands to IoT devices",
+                            "description": "Sending commands to IoT devices, such as turning on/off, adjusting parameters, and executing actions.",
+                            "functional_item_examples": [
+                                "Sending a command to turn on an air conditioner",
+                                "Sending a command to adjust the light intensity",
+                                "Sending a command to open a door"
+                            ]
+                        },
+                        {
+                            "name": "Monitor the status of IoT devices",
+                            "description": "Monitors the status of IoT devices, checking if they are working properly and if there are any issues.",
+                            "functional_item_examples": [
+                                "Checking if a sensor is connected",
+                                "Checking if an actuator is working",
+                                "Checking if a gateway is online"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Sensor Control",
+                    "description": "It allows you to integrate and control different types of sensors into the system, collecting data from the physical world.",
+                    "functional_component": [
+                        {
+                            "name": "Read data from different types of sensors",
+                            "description": "Reading data from different types of sensors, such as temperature, humidity, pressure, light, movement and proximity.",
+                            "functional_item_examples": [
+                                "Reading temperature data from a sensor in a room",
+                                "Reading humidity data from a sensor in an industrial environment",
+                                "Reading motion data from a sensor in a security system"
+                            ]
+                        },
+                        {
+                            "name": "Calibrate sensors",
+                            "description": "Calibration of sensors to ensure accurate readings.",
+                            "functional_item_examples": [
+                                "Calibrating a temperature sensor to ensure readings are correct",
+                                "Calibrating a pressure sensor to ensure readings are within the expected range"
+                            ]
+                        },
+                        {
+                            "name": "Process sensor data",
+                            "description": "Processing sensor data, applying filters, converting units and performing calculations.",
+                            "functional_item_examples": [
+                                "Convert temperature data from Celsius to Fahrenheit",
+                                "Averaging data from a sensor",
+                                "Filtering noise from sensor data."
+                            ]
+                        },
+                        {
+                            "name": "Set up alerts for specific values",
+                            "description": "Configure alerts for specific sensor values, notifying the user when a certain threshold is reached.",
+                            "functional_item_examples": [
+                                "Setting an alert for when the temperature exceeds a maximum threshold",
+                                "Setting an alert for when humidity drops below a minimum threshold"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Device Virtualization",
+                    "description": "It allows you to create virtual representations of physical devices, simulating their behavior and facilitating the development and testing of systems.",
+                    "functional_component": [
+                        {
+                            "name": "Create virtual representations of physical devices",
+                            "description": "Creation of digital models of physical devices, such as sensors, actuators and gateways, allowing them to be simulated or emulated in a virtual environment.",
+                            "functional_item_examples": [
+                                "Creating a virtual representation of a temperature sensor",
+                                "Creating a virtual representation of a motor actuator",
+                                "Creating a virtual representation of an IoT gateway"
+                            ]
+                        },
+                        {
+                            "name": "Manage and control virtual devices",
+                            "description": "Management and control of virtual devices, as if they were real physical devices.",
+                            "functional_item_examples": [
+                                "Monitor the status of a virtual sensor,",
+                                "I sent commands to a virtual actuator,",
+                                "Configure a virtual gateway."
+                            ]
+                        },
+                        {
+                            "name": "Simulate device behavior",
+                            "description": "Simulation of the behavior of physical devices in different scenarios, allowing the system to be tested under controlled conditions.",
+                            "functional_item_examples": [
+                                "Simulation of different temperatures on a virtual sensor",
+                                "Fault simulation in a virtual actuator",
+                                "Simulating different network conditions on a virtual gateway"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Robotization (Drones, Robots)",
+                    "description": "Allows you to integrate and control robots, such as drones and industrial robots, into the system.",
+                    "functional_component": [
+                        {
+                            "name": "Controlling robot movements",
+                            "description": "Controlling the movements of robots, such as drones and industrial robots, to perform specific tasks.",
+                            "functional_item_examples": [
+                                "Controlling the flight of a drone to capture aerial images",
+                                "Controlling the movements of a robotic arm on a production line"
+                            ]
+                        },
+                        {
+                            "name": "Programming tasks for robots",
+                            "description": "Programming tasks for robots, such as following routes, collecting data and interacting with the environment.",
+                            "functional_item_examples": [
+                                "Programming a drone to follow a predefined route",
+                                "Programming a robot to collect soil samples",
+                                "Programming a robot to interact with objects"
+                            ]
+                        },
+                        {
+                            "name": "Collecting sensor data on robots",
+                            "description": "Data collection from sensors embedded in robots, such as cameras, distance sensors and GPS.",
+                            "functional_item_examples": [
+                                "Collecting aerial images from a drone",
+                                "Collecting distance data from a robot to avoid obstacles",
+                                "Collecting GPS data from a robot for tracking"
+                            ]
+                        },
+                        {
+                            "name": "Monitor the status of robots",
+                            "description": "Monitoring robot status such as battery, location and mission status.",
+                            "functional_item_examples": [
+                                "Monitoring the battery level of a drone",
+                                "Monitoring a robot's location on a map",
+                                "Monitoring the progress of a scheduled task"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Calculation processing",
+            "description": "Performs calculations and data processing, using different algorithms and techniques.",
+            "main_category": [
+                {
+                    "name": "Data Analysis",
+                    "description": "Data analysis to extract relevant information, identify patterns and trends.",
+                    "functional_component": [
+                        {
+                            "name": "Statistical Analysis",
+                            "description": "Applies statistical methods to analyze data, such as mean, standard deviation, correlation, and regression.",
+                            "functional_item_examples": [
+                                "Calculating the average sales of a product",
+                                "Sales distribution analysis",
+                                "Correlation analysis between two variables",
+                                "Calculating means and variances in data sets",
+                                "Assessing standard deviations in performance metrics",
+                                "Trend analysis"
+                            ]
+                        },
+                        {
+                            "name": "Predictive Analysis",
+                            "description": "Uses predictive analytics techniques to predict future outcomes based on historical data.",
+                            "functional_item_examples": [
+                                "Forecasting demand for a product",
+                                "Predicting a customer's credit risk",
+                                "Sales forecast based on seasonal data",
+                                "Projection of financial risks"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Data Processing",
+                    "description": "Manipulation and organization of data for different purposes.",
+                    "functional_component": [
+                        {
+                            "name": "Classification and Ordering",
+                            "description": "Classification and ordering of data according to specific criteria, such as alphabetical, numerical or chronological order.",
+                            "functional_item_examples": [
+                                "Sorting a customer list alphabetically",
+                                "Sorting a list of products by price",
+                                "Sorting customer lists by purchase volume",
+                                "Classification of products by categories",
+                                "Organizing tasks by priority"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Updating Information Attributes",
+                    "description": "Changing values ​​or attributes of stored data.",
+                    "functional_component": [
+                        {
+                            "name": "Status Update",
+                            "description": "Updating the status of information based on specific conditions.",
+                            "functional_item_examples": [
+                                "Updating a task's status to \"completed\".",
+                                "Order status update to \"delivered\"",
+                                "Change the status of support tickets to \"resolved\"",
+                                "Changing project status to \"in progress\"",
+                                "Changing the status of a credit proposal to \"under analysis\"",
+                                "Changing the status of a credit agreement to \"paid off\" after paying the last installment"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Information Comparison",
+                    "description": "Analysis of similarities or differences between data sets.",
+                    "functional_component": [
+                        {
+                            "name": "Compare documents",
+                            "description": "Comparing documents to identify similarities and differences, such as plagiarism, different versions, and duplicate content.",
+                            "functional_item_examples": [
+                                "Comparing two text documents to identify plagiarism",
+                                "Comparing two versions of a document to identify differences",
+                                "Checking for inconsistencies in financial documents"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Information Summarization",
+                    "description": "Creating simplified or consolidated views of large volumes of data.",
+                    "functional_component": [
+                        {
+                            "name": "Aggregate data",
+                            "description": "Data aggregation, combining information from different sources and creating summaries and reports.",
+                            "functional_item_examples": [
+                                "Aggregation of sales data from different regions",
+                                "Generation of sales summaries by region",
+                                "Aggregation of performance data from different employees",
+                                "Aggregation of metrics by periods"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Navigation Flow",
+            "description": "Set of processes and elements that guide the user through a system, allowing access to its functionalities in a structured and intuitive way.",
+            "main_category": [
+                {
+                    "name": "Page Navigation",
+                    "description": "It facilitates access and viewing of the different sections and functionalities of the system through specific pages and interfaces.",
+                    "functional_component": [
+                        {
+                            "name": "Navigation Menus",
+                            "description": "Link structures that organize and provide access to the main areas and functionalities of the system.",
+                            "functional_item_examples": [
+                                "Main menu with links to different modules (e.g. \"Dashboard\", \"Clients\", \"Products\", \"Reports\")",
+                                "Side menu with sub-items for quick access to specific settings or options",
+                                "Top bar with links to access the user profile, notifications and general settings"
+                            ]
+                        },
+                        {
+                            "name": "Search Bars",
+                            "description": "Tools that allow the user to quickly locate information or functionality within the system through search terms or filters.",
+                            "functional_item_examples": [
+                                "Search box in the header to find products, customers or orders",
+                                "Advanced filters in areas such as reports or listings",
+                                "Search field to locate records in large databases"
+                            ]
+                        },
+                        {
+                            "name": "Breadcrumbs",
+                            "description": "Interface elements that indicate to the user their location within the hierarchical structure of the system, allowing easy return to previous pages.",
+                            "functional_item_examples": [
+                                "Displaying \"Home > Products > Electronics > Televisions\"",
+                                "Navigation between categories in an e-commerce system",
+                                "Breadcrumbs in an admin panel with links to specific settings pages"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Navigation between Workflows",
+                    "description": "Structure that organizes the sequence of steps within processes or tasks in the system, guiding the user to complete a set of actions.",
+                    "functional_component": [
+                        {
+                            "name": "Task Wizards",
+                            "description": "Interactive guides that help a user complete a sequence of steps, often in complex or multi-step tasks.",
+                            "functional_item_examples": [
+                                "New customer registration wizard, with steps to fill in personal details, address and payment methods",
+                                "Wizard for creating a purchase order, with steps to select products, choose a supplier and define payment terms",
+                                "Flowchart for creating an invoice, with steps for filling in items, tax data and final review"
+                            ]
+                        },
+                        {
+                            "name": "Step or Tab Navigation",
+                            "description": "Allows the user to navigate between different sections or steps of a process without losing context, making it easier to review and modify data.",
+                            "functional_item_examples": [
+                                "Tabs to edit customer information (e.g. \"Personal Data\", \"Address\", \"Payments\")",
+                                "Process of creating a report with steps such as \"Filter Selection\", \"Preview\" and \"Report Generation\"",
+                                "Forms with multiple steps divided into sections, such as \"Basic Information\", \"Details\", \"Review\""
+                            ]
+                        },
+                        {
+                            "name": "Navigation Maps",
+                            "description": "Visual structures that represent the organization of the system, allowing the user to quickly identify where they are and how to navigate to other areas.",
+                            "functional_item_examples": [
+                                "Interactive map of an intranet with access to different departments or documents",
+                                "Overview of an ERP system with a functionality tree (e.g. \"Sales\", \"Purchasing\", \"Finance\")",
+                                "Graphical representation of a workflow or process, where the user can click on each step to navigate between them"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Page Redirection",
+                    "description": "Automatically redirects the user to a new page or section of the system after completing an action, such as completing a registration or transaction, promoting a continuous flow experience.",
+                    "functional_component": [
+                        {
+                            "name": "Redirection after Data Saving",
+                            "description": "Upon successful completion of a data creation or update operation, the system directs the user to a summary page or home page, saving the user from having to take additional actions to return to the starting point.",
+                            "functional_item_examples": [
+                                "After registering a customer, the user goes to the 'Customers' page or to the customer list",
+                                "After submitting the sales form, the user goes to the 'Sales' page with the orders",
+                                "After registering an invoice, the system takes the user to the 'Invoices' page or to the list of documents"
+                            ]
+                        },
+                        {
+                            "name": "Conditional Redirection",
+                            "description": "Redirection to a specific page based on a condition or action performed by the user, such as the need to complete another task or view newly created information.",
+                            "functional_item_examples": [
+                                "After registering a new product, the system can take the user to the product's 'Details' page",
+                                "After creating a purchase order, the system can take the user to the 'Order Details' page or to the 'Orders in Progress' list.",
+                                "After updating the data, the user can be taken to the 'Data Review' page to review the changes."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

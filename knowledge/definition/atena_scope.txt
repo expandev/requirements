@@ -1,0 +1,67 @@
+The main function is generate a document with the answer for questions like this above.
+
+This is a guide to understanding some examples of questions to generate the final Software Definition:
+
+
+
+What are the main challenges or problems you expect to solve with the implementation of this software?
+
+What is the overall goal and the main macroprocesses you want to control with this software?
+
+What are the key/critical functionalities in the software flow?
+
+Is there any existing software or tool that this software will replace or complement?
+
+What is the expected deadline for the delivery and implementation of this software?
+
+What are the main competitors or similar products in the market that we should consider?
+
+Do you have any expansion or scaling strategy planned for the software in the future?
+
+Are there any specific regulations or compliance requirements that the software must meet?
+
+Who are the main departments using the software within the company?
+
+What is the estimated total number of users and concurrent users who will use the software?
+
+Do you have any documentation, such as specifications, prototypes, flowcharts, or existing diagrams, that you can share with us?
+
+What is the current technological architecture of your organization?
+
+Do you have any preference for a specific technology, programming language, or database for the development of this software?
+
+Are there any platform restrictions we should consider? For example, on which interfaces will the software be used (e.g., browser, tablet, mobile)?
+
+Do you have any specific design preferences or guidelines for the user interface?
+
+Is there a need to develop a mobile application (iOS, Android)? If yes, do you have a license to publish the app on the Apple Store and Google Play?
+
+Is there a preference or restriction regarding hosting the software in the cloud or on-premises?
+
+Is there any planned integration with other internal or external systems/databases (e.g., HR systems, accounting, CRM)? If yes, what are they?
+
+Are there any specific API requirements that we should consider for integration with other systems?
+
+Are there any other dependencies in the software, such as file servers or storage, for example?
+
+Will reports be exported, and if so, in which formats?
+
+Will there be any routine for sending reports via email or other communication channels?
+
+Will it be necessary to make data, reports, files, and others available/readable in any directory [Bucket, sftp]?
+
+Will there be a notification center? If yes, which channels (screen, push, SMS)?
+
+Are there any specific requirements regarding data security or privacy that must be considered during the implementation of this software?
+
+What are the security needs for this software (authentication, authorization, and encryption requirements)?
+
+What will be the user authentication method implemented? Will the system integrate with Active Directory (AD) for authentication, or will it have its own login and password mechanism managed by the application?
+
+Are there any specific access control requirements for user data in the software? E.g., access permissions beyond the system transaction level, but also restrictions on displaying or manipulating data by users.
+
+Are there any specific performance requirements we need to meet? For example, how many concurrent users should the system support?
+
+Is it a requirement for security tests (e.g., Pentest) to be performed during development?
+
+What other technical challenges and risks do you anticipate for this project?
